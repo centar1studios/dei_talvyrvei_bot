@@ -1,1 +1,21 @@
-
+The following permissions are what Dei can access:
+  View Audit Log
+  Manage Roles
+  Kick Members
+  Ban Members
+  Manage Webhooks
+  View Channels
+  Moderate Members
+  Send Messages
+  Send Messages in Threads
+  Manage Messages
+  Pin Messages
+  Embed Links
+  Attach Files
+  Read Message History
+  Use External Emojis
+  Add Reactions
+  Create Polls
+  Bypass Slowmode
+  
+  
