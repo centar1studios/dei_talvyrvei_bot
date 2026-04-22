@@ -1,8 +1,3 @@
-DASHBOARD_URL=https://yourdomain.com
-DASHBOARD_SECRET=your-api-secret-here
-GUILD_ID=your-discord-guild-id
-"""
- 
 import os
 import httpx
 import asyncio
