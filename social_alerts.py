@@ -1,18 +1,3 @@
-Add this to your .env file:
- 
-  TWITTER_BEARER_TOKEN=your_bearer_token
-  INSTAGRAM_ACCESS_TOKEN=your_access_token
-  INSTAGRAM_USER_ID=your_user_id
-  TIKTOK_USERNAMES=username1,username2   (comma-separated, no @)
- 
-Twitch and YouTube are handled via Cloudflare webhooks — no polling needed.
- 
-HOW TO GET API KEYS:
-  Twitter:   developer.twitter.com → Create project → Bearer Token (free tier)
-  Instagram: developers.facebook.com → Create app → Instagram Graph API → Access Token
-  TikTok:    No official API — we scrape public profile RSS where available
-"""
- 
 import os
 import httpx
 import asyncio
@@ -268,7 +253,7 @@ async def check_instagram(bot: discord.Client, alert: dict):
  
  
 # ─────────────────────────────────────────────
-# TIKTOK (public RSS — unofficial, may break)
+# TIKTOK (public RSS - unofficial, may break)
 # ─────────────────────────────────────────────
  
 async def check_tiktok(bot: discord.Client, alert: dict):
@@ -347,7 +332,7 @@ async def check_tiktok(bot: discord.Client, alert: dict):
  
 async def run_social_polls(bot: discord.Client):
     """
-    Background coroutine — call this from bot's on_ready.
+    Background coroutine - call this from bot's on_ready.
     Polls Twitter, Instagram, and TikTok every 5 minutes.
     Twitch and YouTube are handled via Cloudflare webhooks.
     """
@@ -380,7 +365,7 @@ async def run_social_polls(bot: discord.Client):
                     elif platform == "tiktok":
                         await check_tiktok(bot, alert)
                         await asyncio.sleep(2)
-                    # twitch + youtube are webhook-based — no polling needed
+                    # twitch + youtube are webhook-based - no polling needed
                 except Exception as e:
                     print(f"[Social] Error in {platform} poll: {e}")
  
