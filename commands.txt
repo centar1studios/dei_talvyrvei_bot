@@ -1,5 +1,0 @@
-COMMANDS TO REMEMBER
-pm2 status          # check if bot is running
-pm2 logs D3iBot     # view live logs
-pm2 restart D3iBot  # restart the bot
-cd ~/D3iBot && git pull origin main  # update code from GitHub
